@@ -8,10 +8,11 @@ export class UserController {
 
   createUser = async (req: Request, res: Response) => {
     try {
-      const { nome, nascimento, salario, departamento } = req.body;
+      const { nome, cpf, nascimento, salario, departamento } = req.body;
 
       const input: user = {
         nome,
+        cpf,
         nascimento,
         salario,
         departamento,
@@ -64,10 +65,11 @@ export class UserController {
   updateUser = async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
-      const { nome, nascimento, salario, departamento } = req.body;
+      const { nome, cpf, nascimento, salario, departamento } = req.body;
 
       const input: user = {
         nome,
+        cpf,
         nascimento,
         salario,
         departamento,

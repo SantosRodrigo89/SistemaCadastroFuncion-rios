@@ -21,6 +21,7 @@ connection
     CREATE TABLE IF NOT EXISTS CDC_EMPLOYEE (
         id INT PRIMARY KEY AUTO_INCREMENT,
         nome VARCHAR(255) NOT NULL,
+        cpf VARCHAR(255) NOT NULL,
         nascimento VARCHAR(255) NOT NULL,
         salario VARCHAR(255) NOT NULL,
         departamento VARCHAR(255) NOT NULL

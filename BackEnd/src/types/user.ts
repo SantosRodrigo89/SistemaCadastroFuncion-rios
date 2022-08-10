@@ -5,6 +5,7 @@ enum DEPARTAMENTO_TYPES {
 
 export type user = {
   nome: string;
+  cpf: string;
   nascimento: string;
   salario: string;
   departamento: DEPARTAMENTO_TYPES;

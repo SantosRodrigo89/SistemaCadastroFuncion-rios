@@ -5,6 +5,7 @@ const TABLE_NAME = "CDC_EMPLOYEE";
 export default class UserData extends BaseDatabase {
   public createUser = async (
     nome: string,
+    cpf: string,
     nascimento: string,
     salario: string,
     departamento: string
@@ -13,6 +14,7 @@ export default class UserData extends BaseDatabase {
       await this.getConnection()
         .insert({
           nome,
+          cpf,
           nascimento,
           salario,
           departamento
@@ -60,6 +62,7 @@ public getUserById = async (id: string): Promise<any> => {
 public updateUser = async (
   id: string,
   nome: string,
+  cpf: string,
   nascimento: string,
   salario: string,
   departamento: string
@@ -68,6 +71,7 @@ public updateUser = async (
     await this.getConnection()
       .update({
         nome,
+        cpf,
         nascimento,
         salario,
         departamento

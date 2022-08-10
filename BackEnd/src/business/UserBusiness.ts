@@ -9,9 +9,9 @@ export class UserBusiness {
 
   async createUser(user: user) {
     try {
-      const { nome, nascimento, salario, departamento } = user;
+      const { nome, cpf,  nascimento, salario, departamento } = user;
 
-      if (!nome || !nascimento || !salario || !departamento) {
+      if (!nome || !cpf || !nascimento || !salario || !departamento) {
         throw new BaseError(422, "Por favor preencha todos os campos");
       }
 
@@ -21,6 +21,7 @@ export class UserBusiness {
 
       return await userDB.createUser(
         user.nome,
+        user.cpf,
         user.nascimento,
         user.salario,
         user.departamento
@@ -49,13 +50,13 @@ async getUserById(id: string) {
 
 async updateUser (id: string, user: user) {
   try {
-    const { nome, nascimento, salario, departamento } = user;
+    const { nome, cpf, nascimento, salario, departamento } = user;
 
-    if (!nome || !nascimento || !salario || !departamento) {
+    if (!nome || !cpf || !nascimento || !salario || !departamento) {
       throw new BaseError(422, "Por favor preencha todos os campos");
     }
 
-    const userFromDB = await userDB.updateUser(id, nome, nascimento, salario, departamento);
+    const userFromDB = await userDB.updateUser(id, nome, cpf,  nascimento, salario, departamento);
 
     return userFromDB;
   } catch (error: any) {

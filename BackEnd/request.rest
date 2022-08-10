@@ -2,7 +2,8 @@ POST http://localhost:3003/user/register
 Content-Type: application/json
 
 {
-    "nome": "João",
+    "nome": "Dani",
+    "cpf": "123456787",
     "nascimento": "01011990",
     "salario": "3000",
     "departamento": "administrativo"
@@ -24,9 +25,10 @@ Content-Type: application/json
 
 {
     "nome": "João",
+    "cpf": "123456787",
     "nascimento": "01011990",
     "salario": "3000",
-    "departamento": "sup"s
+    "departamento": "sup"
 }
 
 ######
