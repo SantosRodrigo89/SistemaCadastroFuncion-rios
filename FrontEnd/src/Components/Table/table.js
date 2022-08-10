@@ -90,7 +90,7 @@ const Table = () => {
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
         />
-      </div>
+      
 
       <select
         name={"selectDepartamento"}
@@ -100,6 +100,9 @@ const Table = () => {
         <option value={""}>ESCOLHAR UM DEPARTAMENTO</option>
         {selectOptions}
       </select>
+
+      <button> Pesquisar </button>
+      </div>
 
       <Content>
         <Graphics>
@@ -119,6 +122,7 @@ const Table = () => {
             <></>
           )}
         </Graphics>
+        <button>Novo funcionário</button>
       </Content>
     </div>
   );
