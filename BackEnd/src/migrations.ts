@@ -18,11 +18,11 @@ const connection: Knex = knex({
 connection
   .raw(
     `
-    CREATE TABLE IF NOT EXISTS CADASTRO_IN8 (
+    CREATE TABLE IF NOT EXISTS CDC_EMPLOYEE (
         id INT PRIMARY KEY AUTO_INCREMENT,
         nome VARCHAR(255) NOT NULL,
         nascimento VARCHAR(255) NOT NULL,
-        salario DECIMAL(15,2) NOT NULL,
+        salario VARCHAR(255) NOT NULL,
         departamento VARCHAR(255) NOT NULL
     );
 `

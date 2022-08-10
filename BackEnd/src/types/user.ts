@@ -1,6 +1,11 @@
+enum DEPARTAMENTO_TYPES {
+  ADMINISTRATIVO = "administrativo",
+  SUPORTE = "suporte"
+}
+
 export type user = {
   nome: string;
-  email: string;
   nascimento: string;
-  telefone: string;
+  salario: string;
+  departamento: DEPARTAMENTO_TYPES;
 };

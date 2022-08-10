@@ -13,3 +13,6 @@ const userController = new UserController(userBusiness);
 
 userRouter.post("/register", userController.createUser);
 userRouter.get("/getUsers", userController.getUsers); 
+userRouter.get("/getUserById/:id", userController.getUserById);
+userRouter.put("/updateUser/:id", userController.updateUser);
+userRouter.delete("/deleteUser/:id", userController.deleteUser);

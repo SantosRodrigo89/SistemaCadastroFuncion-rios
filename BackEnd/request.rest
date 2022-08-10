@@ -1,14 +1,36 @@
-POST https://in8-back.herokuapp.com/user/register
+POST http://localhost:3003/user/register
 Content-Type: application/json
 
 {
     "nome": "João",
-    "email": "jao@gmail.com",
-    "nascimento": "1948-08-25",
-    "telefone": "31999999999"
+    "nascimento": "01011990",
+    "salario": "3000",
+    "departamento": "administrativo"
 }
 
 #######
-
-GET https://in8-back.herokuapp.com/user/getUsers
+GET http://localhost:3003/user/getUsers
 Content-Type: application/json
+
+
+#######
+GET http://localhost:3003/user/getUserById/1
+Content-Type: application/json
+
+######
+
+PUT http://localhost:3003/user/updateUser/3
+Content-Type: application/json
+
+{
+    "nome": "João",
+    "nascimento": "01011990",
+    "salario": "3000",
+    "departamento": "sup"s
+}
+
+######
+
+DELETE http://localhost:3003/user/deleteUser/1
+Content-Type: application/json
+
