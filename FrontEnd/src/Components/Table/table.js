@@ -20,7 +20,6 @@ const Table = () => {
         console.log(err);
       });
   };
-
   useEffect(() => {
     getUsers();
   }, [atualiza]);
@@ -32,7 +31,6 @@ const Table = () => {
   };
 
   const filterDepartamento = listaUsers && listaUsers.filter;
-  console.log(typeof selectDepartamento);
   const filterUsers =
     listaUsers &&
     listaUsers
@@ -46,6 +44,16 @@ const Table = () => {
           ? true
           : res.departamento === selectDepartamento;
       })
+      .sort(function (a, b) {
+        if (a.nome > b.nome) {
+          return 1;
+        }
+        if (a.nome < b.nome) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      })
       .map((user) => (
         <TableRows key={user.id}>
           <ItemTable>{user.nome}</ItemTable>
@@ -58,10 +66,6 @@ const Table = () => {
           </ItemTable>
         </TableRows>
       ));
-
-  console.log(filterUsers);
-
-  console.log(filterDepartamento);
 
   const selectOptions =
     listaUsers &&
@@ -77,7 +81,7 @@ const Table = () => {
     setSelectDepartamento(event.target.value);
   };
 
-  console.log(selectDepartamento);
+  console.log(filterUsers);
 
   return (
     <div>
@@ -93,15 +97,12 @@ const Table = () => {
         onChange={handleSelect}
         value={selectDepartamento}
       >
-        <option value={""} >
-          ESCOLHAR UM DEPARTAMENTO
-        </option>
+        <option value={""}>ESCOLHAR UM DEPARTAMENTO</option>
         {selectOptions}
       </select>
 
       <Content>
         <Graphics>
-          {/*  {filterUsers} */}
           {listaUsers.length > 0 ? (
             <div>
               <TableHead>
