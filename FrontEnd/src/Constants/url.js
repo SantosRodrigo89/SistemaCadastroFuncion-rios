@@ -1,0 +1,1 @@
+export const BASE_URL = `https://in8-back.herokuapp.com`
