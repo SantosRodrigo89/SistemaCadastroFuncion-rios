@@ -1,29 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../Constants/url";
-import {
-  Content,
-  Graphics,
-  ItemTable,
-  TableStyled,
-  TableHead,
-  TableRows,
-  ContainerScroll,
-  NameTable,
-  NumberTable,
-  NameTable1,
-  NameTable2,
-  NameTable3,
-  ItemTable1,
-  ItemTable2,
-} from "./styled";
-import ScrollToTop from "../scroll/scrollToTop";
+import { Content, Graphics, ItemTable, TableHead, TableRows } from "./styled";
+
+
 
 const Table = () => {
   const [listaUsers, setListaUsers] = useState([]);
   const [atualiza, setAtualiza] = useState(false);
-  const [participTotal, setParticipTotal] = useState(0);
-  const [valores, setValores] = useState([]);
 
   const getUsers = async () => {
     await axios
@@ -39,18 +23,6 @@ const Table = () => {
 
   useEffect(() => {
     getUsers();
-
-    let total = 0;
-
-    listaUsers.forEach((item) => {
-      total += Number(item.participation);
-      setParticipTotal(total);
-
-      const valoresUsers = listaUsers.map((valor) => {
-        return valor.participation;
-      });
-      setValores(valoresUsers);
-    });
   }, [atualiza]);
 
   const dataMask = (data) => {
@@ -60,40 +32,37 @@ const Table = () => {
   return (
     <div>
       <Content>
-        <h1>LISTA DE CADASTRO</h1>
-
         <Graphics>
           {listaUsers.length > 0 ? (
-            <TableStyled>
+            <div>
               <TableHead>
-                <NameTable> </NameTable>
-                <NameTable1>NOME</NameTable1>
-                <NameTable2>E-MAIL</NameTable2>
-                <NameTable3>NASCIMENTO</NameTable3>
-                <NameTable>TELEFONE</NameTable>
+                
+                <ItemTable>Nome</ItemTable>
+                <ItemTable>Departamento</ItemTable>
+                <ItemTable>Salário</ItemTable>
+                <ItemTable>Nascimento</ItemTable>
+                <ItemTable> Editar - Excluir </ItemTable>
               </TableHead>
 
               {listaUsers.map(( linha ) => {
            
                   return (
                     <TableRows key={linha.id}>
-                      <NumberTable>{linha.id}</NumberTable>
+                   
                       <ItemTable>{linha.nome}</ItemTable>
-                      <ItemTable2>{linha.email}</ItemTable2>
+                      <ItemTable>{linha.departamento}</ItemTable>
+                      <ItemTable>R$ {linha.salario},00</ItemTable>
                       <ItemTable>{dataMask(linha.nascimento)}</ItemTable>
-                      <ItemTable1>{linha.telefone}</ItemTable1>
+                      <ItemTable> Editar - Excluir </ItemTable>
                     </TableRows>
                   );
               })}
-            </TableStyled>
+            </div>
           ) : (
             <></>
           )}
         </Graphics>
       </Content>
-      <ContainerScroll>
-        <ScrollToTop />
-      </ContainerScroll>
     </div>
   );
 };

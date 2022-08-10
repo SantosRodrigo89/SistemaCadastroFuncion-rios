@@ -15,6 +15,10 @@ export class UserBusiness {
         throw new BaseError(422, "Por favor preencha todos os campos");
       }
 
+      if(departamento !== "administrativo" && departamento !== "suporte") {
+        throw new BaseError(422, "Departamento inválido");
+      }
+
       return await userDB.createUser(
         user.nome,
         user.nascimento,
