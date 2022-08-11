@@ -50,6 +50,10 @@ export const FormHeader = styled.div`
       margin: 1%;
      
     }
+
+    select {
+      margin: 2%; 
+    }
   }
 `;
 

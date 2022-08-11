@@ -7,7 +7,6 @@ import {
   EmployeeModal,
   ModalContent,
   FormHeader,
-  InputMaterial,
 } from "./styled";
 
 const NewEmployee = () => {
@@ -22,8 +21,6 @@ const NewEmployee = () => {
   };
 
   //logica form
-
-  const [listaUsers, setListaUsers] = useState([]);
 
   //chamando o hook useForm
   const { form, onChange, clean } = useForm({
@@ -44,7 +41,7 @@ const NewEmployee = () => {
     await axios
       .post(`${BASE_URL}/user/register`, form)
       .then((res) => {
-        console.log(res);
+        alert(res);
         clean();
       })
       .catch((err) => {
@@ -103,17 +100,18 @@ const NewEmployee = () => {
                   required
                 />
 
-                <input
-                  id="outlined"
-                  variant="outlined"
-                  label="departamento"
+                <p>Departamento</p>
+                <select
                   name={"departamento"}
-                  type={"select"}
-                  placeholder="departamento"
-                  value={form.departamento}
                   onChange={onChange}
-                  required
-                />
+                  type={"submit"}
+                  value={form.departamento}
+                >
+                  <option value={form.departamento.suporte}>suporte</option>
+                  <option value={form.departamento.administrativo}>
+                    administrativo
+                  </option>
+                </select>
 
                 <input
                   id="outlined"

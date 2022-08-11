@@ -81,8 +81,6 @@ const Table = () => {
     setSelectDepartamento(event.target.value);
   };
 
-  console.log(filterUsers);
-
   return (
     <div>
       <div>
