@@ -53,7 +53,7 @@ const Form = () => {
   return (
     <ContaninerStyledC>
       <Header>
-        <p>CADASTRO</p>
+        <p>Novo funcionário</p>
         <form onSubmit={onSubimitForm}>
           <InputMaterial
             id="standard-basic"

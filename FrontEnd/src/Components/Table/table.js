@@ -90,18 +90,17 @@ const Table = () => {
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
         />
-      
 
-      <select
-        name={"selectDepartamento"}
-        onChange={handleSelect}
-        value={selectDepartamento}
-      >
-        <option value={""}>ESCOLHAR UM DEPARTAMENTO</option>
-        {selectOptions}
-      </select>
+        <select
+          name={"selectDepartamento"}
+          onChange={handleSelect}
+          value={selectDepartamento}
+        >
+          <option value={""}>ESCOLHAR UM DEPARTAMENTO</option>
+          {selectOptions}
+        </select>
 
-      <button> Pesquisar </button>
+        <button> Pesquisar </button>
       </div>
 
       <Content>
@@ -122,7 +121,6 @@ const Table = () => {
             <></>
           )}
         </Graphics>
-        <button>Novo funcionário</button>
       </Content>
     </div>
   );
