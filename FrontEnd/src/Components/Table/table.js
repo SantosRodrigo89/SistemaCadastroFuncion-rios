@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../Constants/url";
 import { Content, Graphics, ItemTable, TableHead, TableRows } from "./styled";
+import EditEmployee from "../EditEmployee/editEmployee";
 
 const Table = () => {
   const [listaUsers, setListaUsers] = useState([]);
-  const [atualiza, setAtualiza] = useState(false);
   const [selectDepartamento, setSelectDepartamento] = useState("");
   const [inputText, setInputText] = useState("");
 
@@ -22,7 +22,7 @@ const Table = () => {
   };
   useEffect(() => {
     getUsers();
-  }, [atualiza]);
+  }, []);
 
   console.log(listaUsers);
 
@@ -51,7 +51,6 @@ const Table = () => {
         if (a.nome < b.nome) {
           return -1;
         }
-        // a must be equal to b
         return 0;
       })
       .map((user) => (
@@ -61,7 +60,7 @@ const Table = () => {
           <ItemTable>{user.salario}</ItemTable>
           <ItemTable>{dataMask(user.nascimento)}</ItemTable>
           <ItemTable>
-            <button>Editar</button>
+            <EditEmployee user={user} />
             <button>Excluir</button>
           </ItemTable>
         </TableRows>
@@ -94,7 +93,7 @@ const Table = () => {
           onChange={handleSelect}
           value={selectDepartamento}
         >
-          <option value={""}>ESCOLHAR UM DEPARTAMENTO</option>
+          <option value={""}>ESCOLHA UM DEPARTAMENTO</option>
           {selectOptions}
         </select>
 

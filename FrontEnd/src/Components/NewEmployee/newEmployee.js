@@ -10,19 +10,17 @@ import {
 } from "./styled";
 
 const NewEmployee = () => {
-  //logica modal
+  const [atualiza, setAtualiza] = useState(false);
   const [mostar, setMostrar] = useState(false);
 
   const ClickButton = () => {
     setMostrar(true);
   };
+
   const ClickCancelar = () => {
     setMostrar(false);
   };
 
-  //logica form
-
-  //chamando o hook useForm
   const { form, onChange, clean } = useForm({
     nome: "",
     cpf: "",
@@ -33,7 +31,6 @@ const NewEmployee = () => {
 
   const onSubimitForm = (event) => {
     event.preventDefault();
-
     userCreator();
   };
 
@@ -41,14 +38,17 @@ const NewEmployee = () => {
     await axios
       .post(`${BASE_URL}/user/register`, form)
       .then((res) => {
-        alert(res);
+        alert("Criado", res.data);
+        setAtualiza(!atualiza)
         clean();
       })
       .catch((err) => {
         console.log(err.response);
       });
   };
-  useEffect(() => {}, []);
+  useEffect(() => {
+    userCreator();
+  }, [atualiza]);
 
   const maskDate = (value) => {
     return value
@@ -107,6 +107,7 @@ const NewEmployee = () => {
                   type={"submit"}
                   value={form.departamento}
                 >
+                  <option value={""}>ESCOLHA UM DEPARTAMENTO</option>
                   <option value={form.departamento.suporte}>suporte</option>
                   <option value={form.departamento.administrativo}>
                     administrativo

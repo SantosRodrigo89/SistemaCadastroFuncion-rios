@@ -1,22 +1,21 @@
 import React, { useState } from "react";
-import Filter from "../../Components/Filter/filter";
+import EditEmployee from "../../Components/EditEmployee/editEmployee";
 import NewEmployee from "../../Components/NewEmployee/newEmployee";
 import Table from "../../Components/Table/table";
 
 const Feed = () => {
-
-  const [input, setInput] = useState("");
-
   return (
     <div>
+      <div></div>
       <div>
-        <Filter/>
+        <Table />
       </div>
       <div>
-      <Table/>
+        <NewEmployee />
+        <EditEmployee/>
       </div>
       <div>
-      <NewEmployee/>
+     
       </div>
     </div>
   );
