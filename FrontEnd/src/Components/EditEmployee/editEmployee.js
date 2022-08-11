@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../../Constants/url";
 import { useForm } from "../../Hooks/useForm";
-import { useRequestData } from "../../Hooks/useRequestData";
 import {
   MainContainer,
   EmployeeModal,

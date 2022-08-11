@@ -24,8 +24,6 @@ const Table = () => {
     getUsers();
   }, []);
 
-  console.log(listaUsers);
-
   const dataMask = (data) => {
     return data.replace(/(\d{2})(\d{2})(\d{4})/, "$1/$2/$3");
   };
@@ -66,12 +64,14 @@ const Table = () => {
         </TableRows>
       ));
 
+  const departamentos = listaUsers.map((user) => user.departamento);
+
   const selectOptions =
     listaUsers &&
-    listaUsers.map((user) => {
+    [...new Set(departamentos)].map((departamento) => {
       return (
-        <option value={user.departamento} key={user.id}>
-          {user.departamento}
+        <option value={departamento} key={departamento}>
+          {departamento}
         </option>
       );
     });
