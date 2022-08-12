@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../../Constants/url";
 import { useForm } from "../../Hooks/useForm";
 import {
+  ButtonContainer,
   MainContainer,
   EmployeeModal,
   ModalContent,
@@ -49,7 +50,7 @@ const EditEmployee = ({ user }) => {
       .then((response) => {
         console.log(response);
         alert("Ok!");
-        window.location.reload()
+        window.location.reload();
       })
       .catch((error) => {
         console.log(error.response);
@@ -80,16 +81,16 @@ const EditEmployee = ({ user }) => {
 
   return (
     <MainContainer>
-      <button onClick={ClickButton}> Editar </button>
+      <ButtonContainer onClick={ClickButton}> editar </ButtonContainer>
       {mostar === true ? (
         <EmployeeModal>
           <ModalContent>
             <FormHeader>
-              <p>Editar funcionário</p>
+              <h3>Editar funcionário</h3>
               <form onSubmit={onSubimitForm}>
+                
+                <p>Nome</p>
                 <input
-                  id="outlined"
-                  variant="outlined"
                   label="nome"
                   name={"nome"}
                   type={"text"}
@@ -99,9 +100,8 @@ const EditEmployee = ({ user }) => {
                   required
                 />
 
+                <p>Cpf</p>
                 <input
-                  id="outlined"
-                  variant="outlined"
                   label="cpf"
                   name={"cpf"}
                   type={"text"}
@@ -125,9 +125,8 @@ const EditEmployee = ({ user }) => {
                   </option>
                 </select>
 
+                <p>Salário</p>
                 <input
-                  id="outlined"
-                  variant="outlined"
                   label="salario"
                   name={"salario"}
                   type={"salary"}
@@ -137,9 +136,8 @@ const EditEmployee = ({ user }) => {
                   required
                 />
 
+                <p> Data de Nascimento</p>
                 <input
-                  id="outlined"
-                  variant="outlined"
                   label="nascimento"
                   name={"nascimento"}
                   type={"text"}
@@ -149,8 +147,10 @@ const EditEmployee = ({ user }) => {
                   required
                 />
 
-                <button onClick={ClickCancelar}>CANCELAR</button>
-                <button type="submit"> SALVAR </button>
+                <div>
+                  <button onClick={ClickCancelar}>CANCELAR</button>
+                  <button type="submit"> SALVAR </button>
+                </div>
               </form>
             </FormHeader>
           </ModalContent>

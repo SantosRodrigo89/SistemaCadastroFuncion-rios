@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { BASE_URL } from "../../Constants/url";
-import { MainContainer, EmployeeModal, ModalContent } from "./styled";
+import { MainContainer, EmployeeModal, ModalContent, ButtonContainer, ButtonContainerExclude} from "./styled";
 
 const DeleteEmployee = ({ user }) => {
   const [mostar, setMostrar] = useState(false);
@@ -32,14 +32,17 @@ const DeleteEmployee = ({ user }) => {
 
     return (
       <MainContainer>
-        <button onClick={ClickButton}> excluir </button>
+        <ButtonContainerExclude onClick={ClickButton}> excluir </ButtonContainerExclude>
         {mostar === true ? (
           <EmployeeModal>
             <ModalContent>
-                <p>Nome: {nome}</p>
+              <h3>Deseja excluir o funcionário abaixo?</h3>
+                <p>{nome}</p>
                 <p>CPF: {cpf}</p>
+              <ButtonContainer>
               <button onClick={deleteUser}> Deletar </button>
-              <button onClick={ClickCancelar}>CANCELAR</button>
+              <button onClick={ClickCancelar}>Cancelar</button>
+              </ButtonContainer>
             </ModalContent>
           </EmployeeModal>
         ) : null}

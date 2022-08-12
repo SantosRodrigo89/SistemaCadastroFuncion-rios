@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import TextField from "@mui/material/TextField";
 
 export const MainContainer = styled.div``;
 
@@ -20,7 +19,8 @@ export const ModalContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  padding: 1%;
+  width: 60%;
   height: 90%;
   background-color: whitesmoke;
   margin: auto;
@@ -30,13 +30,12 @@ export const FormHeader = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
   width: 100%;
   
   form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 60%;
     
 
     input {
@@ -46,9 +45,13 @@ export const FormHeader = styled.div`
 
     button {
       
-      padding: 1%;
+      padding: 3%;
       margin: 1%;
-     
+      width: 30%;
+      margin-top: 3%;
+      cursor: pointer;
+      
+
     }
 
     select {
@@ -57,9 +60,7 @@ export const FormHeader = styled.div`
   }
 `;
 
-export const InputMaterial = styled(TextField)`
-    width: 100%;
-`;
+
 
 
 

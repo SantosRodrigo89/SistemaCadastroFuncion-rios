@@ -7,6 +7,7 @@ import {
   EmployeeModal,
   ModalContent,
   FormHeader,
+  ButtonContainer,
 } from "./styled";
 
 const NewEmployee = () => {
@@ -38,7 +39,7 @@ const NewEmployee = () => {
       .post(`${BASE_URL}/user/register`, form)
       .then((res) => {
         alert("Criado", res.data);
-        window.location.reload()
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err.response);
@@ -69,8 +70,10 @@ const NewEmployee = () => {
         <EmployeeModal>
           <ModalContent>
             <FormHeader>
-              <p>Novo funcionário</p>
+              <h4>Novo funcionário</h4>
               <form onSubmit={onSubimitForm}>
+
+                <p>Nome</p>
                 <input
                   id="outlined"
                   variant="outlined"
@@ -83,13 +86,12 @@ const NewEmployee = () => {
                   required
                 />
 
+                <p>Cpf</p>
                 <input
-                  id="outlined"
-                  variant="outlined"
                   label="cpf"
                   name={"cpf"}
                   type={"text"}
-                  placeholder="cpf"
+                  placeholder="Cpf"
                   value={cpfMask(form.cpf)}
                   onChange={onChange}
                   required
@@ -109,9 +111,8 @@ const NewEmployee = () => {
                   </option>
                 </select>
 
+                <p>Salário</p>
                 <input
-                  id="outlined"
-                  variant="outlined"
                   label="salario"
                   name={"salario"}
                   type={"salary"}
@@ -120,10 +121,9 @@ const NewEmployee = () => {
                   onChange={onChange}
                   required
                 />
-
+                
+                <p> Data de Nascimento</p>
                 <input
-                  id="outlined"
-                  variant="outlined"
                   label="nascimento"
                   name={"nascimento"}
                   type={"text"}
@@ -133,8 +133,10 @@ const NewEmployee = () => {
                   required
                 />
 
-                <button onClick={ClickCancelar}>CANCELAR</button>
-                <button type="submit"> SALVAR </button>
+                <div>
+                  <button onClick={ClickCancelar}>Cancelar</button>
+                  <button type="submit"> Salvar </button>
+                </div>
               </form>
             </FormHeader>
           </ModalContent>

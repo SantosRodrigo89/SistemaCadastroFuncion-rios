@@ -6,6 +6,7 @@ export const SearchContainer = styled.div`
   padding: 3%;
   margin: 3%;
   justify-content: space-between;
+  background-color: whitesmoke;
 `
 
 export const SearchInputs = styled.div`
@@ -43,3 +44,5 @@ export const ItemTable = styled.div`
   padding: 12px;
   text-align: center;
 `;
+
+
