@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../Constants/url";
-import { Content, Graphics, ItemTable, TableHead, TableRows } from "./styled";
+import { Content, Graphics, ItemTable, TableHead, TableRows, SearchContainer, SearchInputs } from "./styled";
 import EditEmployee from "../EditEmployee/editEmployee";
 import DeleteEmployee from "../DeleteEmployee/deleteEmployee";
 
@@ -83,12 +83,13 @@ const Table = () => {
 
   return (
     <div>
-      <div>
-        <input
+      <SearchContainer>
+       <SearchInputs>
+       <input
           value={inputText}
+          placeholder={"Nome"}
           onChange={(e) => setInputText(e.target.value)}
         />
-
         <select
           name={"selectDepartamento"}
           onChange={handleSelect}
@@ -97,9 +98,10 @@ const Table = () => {
           <option value={""}>ESCOLHA UM DEPARTAMENTO</option>
           {selectOptions}
         </select>
+       </SearchInputs>
 
         <button> Pesquisar </button>
-      </div>
+      </SearchContainer>
 
       <Content>
         <Graphics>

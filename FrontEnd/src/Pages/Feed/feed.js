@@ -1,6 +1,7 @@
 import React from "react";
 import NewEmployee from "../../Components/NewEmployee/newEmployee";
 import Table from "../../Components/Table/table";
+import { EmployeeButton } from "./styled";
 
 const Feed = () => {
   return (
@@ -8,9 +9,9 @@ const Feed = () => {
       <div>
         <Table />
       </div>
-      <div>
+      <EmployeeButton>
         <NewEmployee />
-      </div>
+      </EmployeeButton>
     </div>
   );
 };

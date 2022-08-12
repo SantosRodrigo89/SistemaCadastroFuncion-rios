@@ -36,8 +36,8 @@ const DeleteEmployee = ({ user }) => {
         {mostar === true ? (
           <EmployeeModal>
             <ModalContent>
-                <p>{nome}</p>
-                <p>{cpf}</p>
+                <p>Nome: {nome}</p>
+                <p>CPF: {cpf}</p>
               <button onClick={deleteUser}> Deletar </button>
               <button onClick={ClickCancelar}>CANCELAR</button>
             </ModalContent>

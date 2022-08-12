@@ -1,41 +1,45 @@
 import styled from "styled-components";
 
+export const SearchContainer = styled.div`
+  border: solid 1px black;
+  display: flex;
+  padding: 3%;
+  margin: 3%;
+  justify-content: space-between;
+`
+
+export const SearchInputs = styled.div`
+display: flex;
+margin-left: 2%;
+
+`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: 80%;
-  margin: 50px;
-  justify-content: center;
   align-items: center;
 `;
 
 export const Graphics = styled.div`
   display: flex;
-  width: 100%;
-  margin: 50px;
-  justify-content: space-between;
   align-items: center;
 `;
 
 export const Table = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.8);
 `;
 
 export const TableHead = styled.div`
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 19% 19% 19% 19% 24%;
   background-color: lightgrey;
 `;
+
 export const TableRows = styled.div`
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 19% 19% 19% 19% 24%;
 `;
 
 export const ItemTable = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 10px;
+  padding: 12px;
   text-align: center;
 `;
