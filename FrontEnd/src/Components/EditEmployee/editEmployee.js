@@ -21,7 +21,7 @@ const EditEmployee = ({ user }) => {
   };
 
   //logica form
-  const { form, onChange, clean } = useForm({
+  const { form, onChange, clean, setForm } = useForm({
     nome: "",
     cpf: "",
     nascimento: "",
@@ -29,29 +29,18 @@ const EditEmployee = ({ user }) => {
     departamento: "",
   });
 
-  const getUserById = async () => {
-    await axios
-      .get(`${BASE_URL}/user/getUserById/${user?.id}`)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error.response);
-      });
-  };
-
   const inicialInfos = () => {
-    const newForm = form;
-    newForm.nome = user?.nome;
-    newForm.cpf = user?.cpf;
-    newForm.nascimento = user?.nascimento;
-    newForm.salario = user?.salario;
-    newForm.departamento = user?.departamento;
+    setForm({
+      nome: user?.nome,
+      cpf: user?.cpf,
+      nascimento: user?.nascimento,
+      salario: user?.salario,
+      departamento: user?.departamento,
+    });
   };
 
   useEffect(() => {
     inicialInfos();
-    getUserById();
   }, []);
 
   const updateUser = async () => {
@@ -60,6 +49,7 @@ const EditEmployee = ({ user }) => {
       .then((response) => {
         console.log(response);
         alert("Ok!");
+        window.location.reload()
       })
       .catch((error) => {
         console.log(error.response);

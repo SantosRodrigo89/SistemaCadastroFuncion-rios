@@ -20,7 +20,7 @@ const DeleteEmployee = ({ user }) => {
       .then((response) => {
         alert("Usuário deletado com sucesso!");
         console.log(response.data);
-        
+        window.location.reload()
       })
       .catch((error) => {
         console.log(error.response);

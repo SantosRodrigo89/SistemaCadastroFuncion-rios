@@ -38,16 +38,12 @@ const NewEmployee = () => {
       .post(`${BASE_URL}/user/register`, form)
       .then((res) => {
         alert("Criado", res.data);
-        clean();
+        window.location.reload()
       })
       .catch((err) => {
         console.log(err.response);
       });
   };
-
-  useEffect(() => {
-    
-  }, []);
 
   const maskDate = (value) => {
     return value
