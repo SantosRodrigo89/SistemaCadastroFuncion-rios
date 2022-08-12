@@ -3,6 +3,7 @@ import axios from "axios";
 import { BASE_URL } from "../../Constants/url";
 import { Content, Graphics, ItemTable, TableHead, TableRows } from "./styled";
 import EditEmployee from "../EditEmployee/editEmployee";
+import DeleteEmployee from "../DeleteEmployee/deleteEmployee";
 
 const Table = () => {
   const [listaUsers, setListaUsers] = useState([]);
@@ -59,7 +60,7 @@ const Table = () => {
           <ItemTable>{dataMask(user.nascimento)}</ItemTable>
           <ItemTable>
             <EditEmployee user={user} />
-            <button>Excluir</button>
+            <DeleteEmployee user={user} />
           </ItemTable>
         </TableRows>
       ));

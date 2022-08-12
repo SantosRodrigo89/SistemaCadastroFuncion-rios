@@ -10,7 +10,6 @@ import {
 } from "./styled";
 
 const NewEmployee = () => {
-  const [atualiza, setAtualiza] = useState(false);
   const [mostar, setMostrar] = useState(false);
 
   const ClickButton = () => {
@@ -39,16 +38,16 @@ const NewEmployee = () => {
       .post(`${BASE_URL}/user/register`, form)
       .then((res) => {
         alert("Criado", res.data);
-        setAtualiza(!atualiza)
         clean();
       })
       .catch((err) => {
         console.log(err.response);
       });
   };
+
   useEffect(() => {
-    userCreator();
-  }, [atualiza]);
+    
+  }, []);
 
   const maskDate = (value) => {
     return value
