@@ -1,4 +1,4 @@
-# teste-pratico-cdc
+# teste-pratico
 
 ![image](https://user-images.githubusercontent.com/93896739/184499033-2bbdc83f-503a-432f-ab42-fc5b75199017.png)
 
