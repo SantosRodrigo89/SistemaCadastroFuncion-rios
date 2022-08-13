@@ -34,8 +34,10 @@ Surge: https://creepy-tank.surge.sh
 * Migrations
 * Formulário de cadastros
 * Tabela com cadastrados
-* Botão to top
-* Menu de ancoragem
+* Filtros
+* Deletar
+* Editar
+
 
 ### What does not work
 
