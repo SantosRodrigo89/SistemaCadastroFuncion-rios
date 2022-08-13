@@ -6,7 +6,7 @@
 ## Teste prático Full Stack
  
 Projeto Full Stack proposto 
-- Sistema de cadastro de funcionários
+- Sistema de cadastro de funcionários com uma API CRUD no backend, no front end temos um filtro por digitação e outro por select(departamento), uma renderização de tabela com os dados e botões de criar, editar e deletar
  
 ## Technology 
  
